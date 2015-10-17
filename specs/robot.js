@@ -10,6 +10,20 @@
       expect(robot.y).toEqual(3);
       expect(robot.orientation).toEqual('N');
     });
+
+    it('should properly move based on current orientation', function () {
+      function testDirection(direction, expectedX, expectedY) {
+        var robotN = new Robot(2, 2, direction);
+        robotN.move();
+        expect(robotN.x).toEqual(expectedX);
+        expect(robotN.y).toEqual(expectedY);
+        expect(robotN.orientation).toEqual(direction);
+      }
+      testDirection('N', 2, 3);
+      testDirection('E', 3, 2);
+      testDirection('S', 2, 1);
+      testDirection('W', 1, 2);
+    });
   });
 
 })();
