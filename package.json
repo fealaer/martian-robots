@@ -1,0 +1,23 @@
+{
+  "name": "martian-robots",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fealaer/martian-robots.git"
+  },
+  "author": "Andrey Pushkarev <fealaer@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fealaer/martian-robots/issues"
+  },
+  "homepage": "https://github.com/fealaer/martian-robots#readme",
+  "devDependencies": {
+    "gulp": "3.9.0",
+    "gulp-jasmine": "2.1.0"
+  }
+}
