@@ -11,18 +11,35 @@
       expect(robot.orientation).toEqual('N');
     });
 
-    it('should properly move based on current orientation', function () {
-      function testDirection(direction, expectedX, expectedY) {
+    it('should properly move based on the current orientation', function () {
+      function testMoveToDirection(direction, expectedX, expectedY) {
         var robotN = new Robot(2, 2, direction);
         robotN.move();
         expect(robotN.x).toEqual(expectedX);
         expect(robotN.y).toEqual(expectedY);
         expect(robotN.orientation).toEqual(direction);
       }
-      testDirection('N', 2, 3);
-      testDirection('E', 3, 2);
-      testDirection('S', 2, 1);
-      testDirection('W', 1, 2);
+      testMoveToDirection('N', 2, 3);
+      testMoveToDirection('E', 3, 2);
+      testMoveToDirection('S', 2, 1);
+      testMoveToDirection('W', 1, 2);
+    });
+
+    it('should properly rotate based on the current orientation and the passed instruction', function () {
+      function testRotationTo(instruction, orientation, expectedOrientation) {
+        var robotN = new Robot(2, 2, orientation);
+        robotN.rotate(instruction);
+        expect(robotN.orientation).toEqual(expectedOrientation);
+      }
+      testRotationTo('L', 'N', 'W');
+      testRotationTo('L', 'W', 'S');
+      testRotationTo('L', 'S', 'E');
+      testRotationTo('L', 'E', 'N');
+
+      testRotationTo('R', 'N', 'E');
+      testRotationTo('R', 'E', 'S');
+      testRotationTo('R', 'S', 'W');
+      testRotationTo('R', 'W', 'N');
     });
   });
 
