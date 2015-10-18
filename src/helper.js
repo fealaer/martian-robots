@@ -18,7 +18,7 @@
         var size = line.split(' ');
         var x, y;
         if (size.length !== 2 || isNaN(x = parseInt(size[0])) || isNaN(y = parseInt(size[1]))) {
-          return error('The first line of input should be a grid size.\nA grid size consists of two integers specifying max values of X and Y the upper-right coordinates of the rectangular world', line);
+          return error('The first line of input should be a grid size.\nA grid size consists of two integers specifying max values of X and Y the upper-right coordinates of the rectangular world.', line);
         }
         return new Grid(x, y);
       }
@@ -46,7 +46,7 @@
       }
 
       if (lines.length !== 3) {
-        return error('It should be exactly 3 lines of input data', input);
+        return error('It should be exactly 3 lines of input data.', input);
       } else {
         if ((res.grid = initialiseGrid(lines[0])) &&
           (res.robot = initialiseRobot(lines[1])) &&

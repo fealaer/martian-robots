@@ -24,24 +24,24 @@
     it('should failed to parse an empty or not full input', function () {
       helper.parseInput('', function (err, res) {
         expect(res).toBeNull();
-        expect(err).toEqual('ERROR: Input is not correct! REASON: It should be exactly 3 lines of input data\n');
+        expect(err).toEqual('ERROR: Input is not correct! REASON: It should be exactly 3 lines of input data.\n');
       });
 
       helper.parseInput('5 3\n1 1 E', function (err, res) {
         expect(res).toBeNull();
-        expect(err).toEqual('ERROR: Input is not correct! REASON: It should be exactly 3 lines of input data\n5 3\n1 1 E');
+        expect(err).toEqual('ERROR: Input is not correct! REASON: It should be exactly 3 lines of input data.\n5 3\n1 1 E');
       });
     });
 
     it('should failed to parse input with an incorrect grid data', function () {
       helper.parseInput('5 3 4\n3 2 N\nFRRF', function (err, res) {
         expect(res).toBeNull();
-        expect(err).toEqual('ERROR: Input is not correct! REASON: The first line of input should be a grid size.\nA grid size consists of two integers specifying max values of X and Y the upper-right coordinates of the rectangular world\n5 3 4');
+        expect(err).toEqual('ERROR: Input is not correct! REASON: The first line of input should be a grid size.\nA grid size consists of two integers specifying max values of X and Y the upper-right coordinates of the rectangular world.\n5 3 4');
       });
 
       helper.parseInput('5 \n3 2 N\nFRRF', function (err, res) {
         expect(res).toBeNull();
-        expect(err).toEqual('ERROR: Input is not correct! REASON: The first line of input should be a grid size.\nA grid size consists of two integers specifying max values of X and Y the upper-right coordinates of the rectangular world\n5 ');
+        expect(err).toEqual('ERROR: Input is not correct! REASON: The first line of input should be a grid size.\nA grid size consists of two integers specifying max values of X and Y the upper-right coordinates of the rectangular world.\n5 ');
       });
     });
 
