@@ -1,7 +1,8 @@
 var gulp = require('gulp')
   , jasmine = require('gulp-jasmine')
   , browserify = require('gulp-browserify')
-  , clean = require('gulp-clean');
+  , clean = require('gulp-clean')
+  , serve = require('gulp-serve');
 
 gulp.task('watch', function () {
   gulp.watch(['src/**/*.js', 'specs/**/*.js'], ['test', 'build']);
@@ -19,6 +20,8 @@ gulp.task('clean', function (cb) {
 
 gulp.task('build', ['clean'], function () {
   gulp.src('src/web-app.js')
-    .pipe(browserify({insertGlobals : true}))
+    .pipe(browserify())
     .pipe(gulp.dest('./public/'));
 });
+
+gulp.task('serve', ['build'], serve('public'));
