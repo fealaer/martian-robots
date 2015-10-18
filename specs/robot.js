@@ -41,6 +41,11 @@
       testRotationTo('R', 'S', 'W');
       testRotationTo('R', 'W', 'N');
     });
+
+    it('should return a current location and orientation on status request', function () {
+      expect((new Robot(5, 3, 'N')).status()).toEqual({x: 5, y: 3, orientation: 'N'});
+      expect((new Robot(2, 5, 'E')).status()).toEqual({x: 2, y: 5, orientation: 'E'});
+    });
   });
 
 })();

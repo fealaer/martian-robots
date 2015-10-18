@@ -41,12 +41,12 @@
       vm.orientation = orientations[vm.orientationIndex];
     };
 
-    //vm.make = function (action) {
-    //  if (action === 'F') {
-    //    vm.move();
-    //  } else {
-    //    vm.rotate(action);
-    //  }
-    //}
+    vm.status = function () {
+      return {
+        x: vm.x,
+        y: vm.y,
+        orientation: vm.orientation
+      };
+    };
   };
 })();
