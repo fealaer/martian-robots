@@ -1,14 +1,16 @@
 (function () {
   'use strict';
 
-  module.exports = function (xmax, ymax) {
+  module.exports = function (x, y) {
     var vm = this;
 
-    vm.xmax = xmax;
-    vm.ymax = ymax;
+    vm.size = {
+      x: x,
+      y: y
+    };
 
     vm.offTheEdge = function (x, y) {
-      return x > vm.xmax || y > vm.ymax || x < 0 || y < 0;
-    }
+      return x > vm.size.x || y > vm.size.y || x < 0 || y < 0;
+    };
   };
 })();

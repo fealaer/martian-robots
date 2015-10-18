@@ -6,8 +6,7 @@
   describe('Grid', function () {
     it('should initialise grid with given boundaries', function () {
       var mars = new Grid(5, 3);
-      expect(mars.xmax).toEqual(5);
-      expect(mars.ymax).toEqual(3);
+      expect(mars.size).toEqual({x: 5, y: 3});
     });
 
     it('should properly indicate is object off the edge or not', function () {
