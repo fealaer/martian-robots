@@ -25,6 +25,7 @@
           vm.x--;
           break;
       }
+      return vm;
     };
 
     vm.rotate = function (instruction) {
@@ -39,6 +40,7 @@
         vm.orientationIndex = 0;
       }
       vm.orientation = orientations[vm.orientationIndex];
+      return vm;
     };
 
     vm.status = function () {
@@ -48,5 +50,14 @@
         orientation: vm.orientation
       };
     };
+
+    vm.do = function (action) {
+      if (action === 'F') {
+        vm.move();
+      } else {
+        vm.rotate(action);
+      }
+      return vm;
+    }
   };
 })();

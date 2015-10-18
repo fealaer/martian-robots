@@ -46,6 +46,17 @@
       expect((new Robot(5, 3, 'N')).status()).toEqual({x: 5, y: 3, orientation: 'N'});
       expect((new Robot(2, 5, 'E')).status()).toEqual({x: 2, y: 5, orientation: 'E'});
     });
+
+    it('should properly respond on an instruction from the Earth', function () {
+      var robot = new Robot(5, 3, 'N');
+      expect(robot.status()).toEqual({x: 5, y: 3, orientation: 'N'});
+      expect(robot.do('L').status()).toEqual({x: 5, y: 3, orientation: 'W'});
+      expect(robot.do('F').status()).toEqual({x: 4, y: 3, orientation: 'W'});
+      expect(robot.do('R').status()).toEqual({x: 4, y: 3, orientation: 'N'});
+      expect(robot.do('R').status()).toEqual({x: 4, y: 3, orientation: 'E'});
+      expect(robot.do('R').status()).toEqual({x: 4, y: 3, orientation: 'S'});
+      expect(robot.do('F').status()).toEqual({x: 4, y: 2, orientation: 'S'});
+    });
   });
 
 })();
