@@ -9,13 +9,44 @@
 <h1>Exploration of Mars or Martian Robots</h1>
 <hr/>
 <h2>Input</h2>
+<h4>Instructions</h4>
+
+<div style="width: 810px;">
+	<p>The first line of input is the upper-right coordinates of the rectangular world, the lower-left coordinates are
+		assumed to be 0, 0.</p>
+
+	<p>The remaining input consists of a sequence of robot positions and instructions (two lines per robot). A position
+		consists of two integers specifying the initial coordinates of the robot and an orientation (N, S, E, W), all
+		separated by whitespace on one line. A robot instruction is a string of the letters "L", "R", and "F" on one
+		line.</p>
+
+	<p>Each robot is processed sequentially, i.e., finishes executing the robot instructions before the next robot begins
+		execution.</p>
+
+	<p>The maximum value for any coordinate is 50.</p>
+
+	<p>All instruction strings will be less than 100 characters in length.</p>
+</div>
 <form>
-	<textarea id="input" cols="100" rows="4"></textarea>
+	<textarea id="input" cols="105" rows="4"></textarea>
 	<br/>
 	<button onclick="process(event);">Run</button>
 </form>
 <br/>
+
 <h2>Output</h2>
-<pre id="output"></pre>
+<h4>Instructions</h4>
+
+<div style="width: 810px;">
+	<p>For each robot position/instruction in the input, the output should indicate the final grid position and
+		orientation of the robot. If a robot falls off the edge of the grid the word "LOST" should be printed after the
+		position and orientation.</p>
+</div>
+<h4>Result</h4>
+<div style="border: 1px solid #bababa;width:820px;overflow:auto;">
+<pre id="output">
+
+</pre>
+</div>
 </body>
 </html>
